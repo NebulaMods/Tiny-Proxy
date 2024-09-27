@@ -38,30 +38,40 @@ Make sure you have [Go installed](https://golang.org/doc/install). Then, follow 
 
 2.  Build the application:
 
+Linux/Darwin:
+
     ```bash
     cd src
     ../build/build.sh
     ```
 
-        ```ps
+Windows:
 
+    ```powershell
     cd src
     ..\build\build.cmd
-
-    ```
-
     ```
 
 3.  Run the application:
+
+Linux:
+
     ```bash
     ../bin/linux/tiny-proxy <api_address:port>
     ```
+
+MacOS:
+
     ```bash
     ../bin/darwin/tiny-proxy <api_address:port>
     ```
-    ```ps
+
+Windows:
+
+    ```powershell
     ..\bin\windows\tiny-proxy.exe <api_address:port>
     ```
+
     - Replace `<api_address:port>` with the address and port where you want the HTTP API server to run (e.g., `:6969`).
 
 ## Usage
