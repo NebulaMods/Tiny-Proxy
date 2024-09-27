@@ -29,20 +29,20 @@
 
 Make sure you have [Go installed](https://golang.org/doc/install). Then, follow these steps to install and run the Tiny Proxy application.
 
-1.  Clone the repository:
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/nebulamods/tiny-proxy.git
 cd tiny-proxy
 ```
 
-2.  Build the application:
+2. Build the application:
 
 Linux/MacOS:
 
 ```bash
-    cd src
-    ../build/build.sh
+cd src
+../build/build.sh
 ```
 
 Windows:
@@ -52,7 +52,7 @@ cd src
 ..\build\build.cmd
 ```
 
-3.  Run the application:
+3. Run the application:
 
 Linux:
 
