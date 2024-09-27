@@ -1,0 +1,30 @@
+# .github/workflows/darwin-build.yml
+name: Darwin (macOS) Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-darwin:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v3
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: "1.20"
+
+      - name: Build for Darwin (macOS)
+        run: |
+          export GOOS=darwin
+          export GOARCH=amd64
+          go build -o bin/darwin/tiny-proxy src/cmd/main.go
+
+      - name: Upload Darwin binary
+        uses: actions/upload-artifact@v3
+        with:
+          name: darwin-binary
+          path: bin/darwin/tiny-proxy

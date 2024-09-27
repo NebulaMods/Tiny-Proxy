@@ -1,0 +1,4 @@
+# Default ignore rules for golang projects
+
+# Ignore bin directory
+bin/
