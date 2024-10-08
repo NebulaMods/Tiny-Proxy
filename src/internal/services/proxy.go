@@ -83,6 +83,11 @@ func (p *TCPProxyService) handleConnection(srcConn net.Conn, forwardAddr string)
 	}
 	defer dstConn.Close()
 
+	// Set deadlines for both srcConn and dstConn
+	timeoutDuration := 5 * time.Minute
+	srcConn.SetDeadline(time.Now().Add(timeoutDuration))
+	dstConn.SetDeadline(time.Now().Add(timeoutDuration))
+
 	// Use a WaitGroup to ensure both directions are copied before closing
 	var wg sync.WaitGroup
 	wg.Add(2)
@@ -91,12 +96,14 @@ func (p *TCPProxyService) handleConnection(srcConn net.Conn, forwardAddr string)
 	go func() {
 		defer wg.Done()
 		p.copyAndLog(srcConn, dstConn)
+		dstConn.Close()
 	}()
 
 	// Copy data from destination to source
 	go func() {
 		defer wg.Done()
 		p.copyAndLog(dstConn, srcConn)
+		srcConn.Close()
 	}()
 
 	// Wait for both directions to finish copying
