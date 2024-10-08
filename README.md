@@ -29,50 +29,50 @@
 
 Make sure you have [Go installed](https://golang.org/doc/install). Then, follow these steps to install and run the Tiny Proxy application.
 
-1.  Clone the repository:
+1. Clone the repository:
 
-    ```bash
-    git clone https://github.com/nebulamods/tiny-proxy.git
-    cd tiny-proxy
-    ```
+```bash
+git clone https://github.com/nebulamods/tiny-proxy.git
+cd tiny-proxy
+```
 
-2.  Build the application:
+2. Build the application:
 
-Linux/Darwin:
+Linux/MacOS:
 
-    ```bash
-    cd src
-    ../build/build.sh
-    ```
+```bash
+cd src
+../build/build.sh
+```
 
 Windows:
 
-    ```powershell
-    cd src
-    ..\build\build.cmd
-    ```
+```powershell
+cd src
+..\build\build.cmd
+```
 
-3.  Run the application:
+3. Run the application:
 
 Linux:
 
-    ```bash
-    ../bin/linux/tiny-proxy <api_address:port>
-    ```
+```bash
+../bin/linux/tiny-proxy <api_address:port>
+```
 
 MacOS:
 
-    ```bash
-    ../bin/darwin/tiny-proxy <api_address:port>
-    ```
+```bash
+../bin/darwin/tiny-proxy <api_address:port>
+```
 
 Windows:
 
-    ```powershell
-    ..\bin\windows\tiny-proxy.exe <api_address:port>
-    ```
+```powershell
+..\bin\windows\tiny-proxy.exe <api_address:port>
+```
 
-    - Replace `<api_address:port>` with the address and port where you want the HTTP API server to run (e.g., `:6969`).
+- Replace `<api_address:port>` with the address and port where you want the HTTP API server to run (e.g., `:6969`).
 
 ## Usage
 
